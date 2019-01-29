@@ -15,9 +15,10 @@ services:
    wordpress:
      depends_on:
        - db
-     image: wordpress:latest
+     build: docker/mywordpress
      volumes:
        - ./html:/var/www/html
+#       - ./settings/:/usr/local/etc/php/conf.d/
      ports:
        - "80:80"
      restart: always
